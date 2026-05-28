@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정서윤 - 디지털 명함</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            background-color: #e3f1f2; /* 푸른 빛이 도는 부드러운 파스텔톤 옥색 배경 */
+            color: #2c3e45;
+        }
+
+        /* 명함 배치 컨테이너 */
+        .business-card-container {
+            max-width: 680px;
+            margin: 100px auto;
+            padding: 20px;
+        }
+
+        /* 명함 카드 본체 */
+        .business-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(160, 190, 195, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            overflow: hidden;
+            display: table;
+            width: 100%;
+        }
+
+        /* 왼쪽 사진 영역 */
+        .card-left {
+            display: table-cell;
+            width: 40%;
+            background-color: #f5fafb;
+            vertical-align: middle;
+            text-align: center;
+            padding: 40px 20px;
+            border-right: 1px solid #e8f2f3;
+        }
+
+        /* 오른쪽 정보 텍스트 영역 */
+        .card-right {
+            display: table-cell;
+            width: 60%;
+            vertical-align: middle;
+            padding: 45px 40px;
+        }
+
+        /* 프로필 이미지 박스 (동그라미 틀) */
+        .profile-img-box {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background-color: #d2e8ea;
+            margin: 0 auto;
+            display: block;
+            position: relative;
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden; /* 사진이 동그라미 밖으로 나가지 않게 자름 */
+        }
+
+        /* 동그라미 틀에 맞게 사진 스타일 지정 */
+        .profile-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 사진 비율이 깨지지 않게 꽉 채움 */
+            display: block;
+        }
+
+        .photo-tip {
+            font-size: 11px;
+            color: #8fa4a6;
+            margin-top: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* 이름 섹션 */
+        .name-section {
+            margin-bottom: 25px;
+        }
+
+        .name-section h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e2d31;
+            letter-spacing: -0.5px;
+        }
+
+        .name-section .sub-title {
+            margin: 4px 0 0 0;
+            font-size: 13px;
+            color: #638287;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* 정보 리스트 */
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info-list li {
+            font-size: 14px;
+            margin-bottom: 14px;
+            display: block;
+            color: #4a5f63;
+        }
+
+        .info-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-list .label {
+            display: inline-block;
+            width: 80px;
+            font-weight: 700;
+            color: #6da3a9;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .info-list .value {
+            font-weight: 400;
+            color: #2c3e45;
+        }
+
+        /* 명함 하단 포인트 컬러 바 */
+        .card-accent-bar {
+            height: 6px;
+            background: linear-gradient(90deg, #96cbd1, #6da3a9);
+            width: 100%;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            margin-top: -6px;
+        }
+
+        .footer-tip {
+            text-align: center;
+            font-size: 12px;
+            color: #7ba8ac;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="business-card-container">
+        
+        <!-- 명함 상자 -->
+        <div class="business-card">
+            
+            <!-- 왼쪽: 프로필 사진 섹션 -->
+            <div class="card-left">
+                <div class="profile-img-box">
+                    <!-- 💡 내 사진 파일 이름을 아래 'profile.jpg' 자리에 똑같이 적어주면 됩니다! -->
+                    <img src="profile.jpg" alt="프로필 사진">
+                </div>
+                <div class="photo-tip">PORTFOLIO SPACE</div>
+            </div>
+
+            <!-- 오른쪽: 정보 기입 섹션 -->
+            <div class="card-right">
+                <div class="name-section">
+                    <h1>정서윤</h1>
+                    <div class="sub-title">UNIVERSITY STUDENT</div>
+                </div>
+                
+                <!-- 깔끔하게 정렬된 정보 목록 -->
+                <ul class="info-list">
+                    <li>
+                        <span class="label">🎂 생년월일</span>
+                        <span class="value">2006. 05. 31</span>
+                    </li>
+                    <li>
+                        <span class="label">📞 연락처</span>
+                        <span class="value">010-4094-0531</span> <!-- 💡 실제 번호로 수정 -->
+                    </li>
+                    <li>
+                        <span class="label">✉️ 이메일</span>
+                        <span class="value">jsy2006kr@naver.com</span> <!-- 💡 실제 이메일로 수정 -->
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <!-- 카드 하단 디자인 악센트 바 -->
+        <div class="card-accent-bar"></div>
+
+        <div class="footer-tip">
+            © 2026 Seoyun. All rights reserved.
+        </div>
+    </div>
+
+</body>
+</html>
